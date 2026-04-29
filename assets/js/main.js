@@ -103,6 +103,14 @@ function guardProfilePage() {
   }
 }
 
+function guardAuthPageForLoggedInUser() {
+  if (document.body.dataset.page !== "auth") return;
+  const session = getSession();
+  if (session && session.rollNo) {
+    window.location.href = "profile.html";
+  }
+}
+
 function initMain() {
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
@@ -110,6 +118,7 @@ function initMain() {
   markActivePage();
   wireAuthUI();
   guardProfilePage();
+  guardAuthPageForLoggedInUser();
 }
 
 document.addEventListener("DOMContentLoaded", initMain);

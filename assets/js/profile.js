@@ -8,7 +8,9 @@
 }
 
 function saveUsers(users) {
-  localStorage.setItem(window.SIETAuth.STORAGE_USERS, JSON.stringify(users));
+  const writer = window.SIETAuth.writeStorage;
+  if (typeof writer !== "function") return false;
+  return writer(window.SIETAuth.STORAGE_USERS, users);
 }
 
 function showProfileMessage(text, type) {
@@ -32,38 +34,16 @@ function loadProfile() {
   document.getElementById("phone").value = p.phone || "";
   document.getElementById("about").value = p.about || "";
   document.getElementById("skills").value = p.skills || "";
-
-  const photoPreview = document.getElementById("photoPreview");
-  if (p.photo) {
-    photoPreview.src = p.photo;
-    photoPreview.style.display = "block";
-  }
-}
-
-function setupPhotoUpload() {
-  const input = document.getElementById("photo");
-  const preview = document.getElementById("photoPreview");
-
-  input.addEventListener("change", () => {
-    const file = input.files && input.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      preview.src = reader.result;
-      preview.style.display = "block";
-    };
-    reader.readAsDataURL(file);
-  });
 }
 
 function setupProfileForm() {
   const form = document.getElementById("profileForm");
+  if (!form || !window.SIETAuth) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const { getUsers } = window.SIETAuth;
-    const session = window.SIETAuth.getSession();
+    const { getUsers, getSession } = window.SIETAuth;
+    const session = getSession();
     if (!session) {
       showProfileMessage("Session expired. Login again.", "error");
       return;
@@ -76,24 +56,26 @@ function setupProfileForm() {
       return;
     }
 
-    const preview = document.getElementById("photoPreview");
     users[idx].profile = {
       fullName: document.getElementById("fullName").value.trim(),
       branch: document.getElementById("branch").value.trim(),
       year: document.getElementById("yearOfStudy").value.trim(),
       phone: document.getElementById("phone").value.trim(),
       about: document.getElementById("about").value.trim(),
-      skills: document.getElementById("skills").value.trim(),
-      photo: preview.src && preview.style.display !== "none" ? preview.src : ""
+      skills: document.getElementById("skills").value.trim()
     };
 
-    saveUsers(users);
+    const ok = saveUsers(users);
+    if (!ok) {
+      showProfileMessage("Unable to save profile in this browser. Please check storage settings.", "error");
+      return;
+    }
+
     showProfileMessage("Profile saved successfully.", "success");
   });
 }
 
 function initProfilePage() {
-  setupPhotoUpload();
   loadProfile();
   setupProfileForm();
 }
