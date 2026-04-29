@@ -90,7 +90,7 @@ function wireAuthUI() {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
       clearSession();
-      window.location.href = "auth.html";
+      window.location.href = "/auth";
     });
   }
 }
@@ -99,7 +99,7 @@ function guardProfilePage() {
   if (document.body.dataset.page !== "profile") return;
   const session = getSession();
   if (!session || !session.rollNo) {
-    window.location.href = "auth.html";
+    window.location.href = "/auth";
   }
 }
 
@@ -107,7 +107,7 @@ function guardAuthPageForLoggedInUser() {
   if (document.body.dataset.page !== "auth") return;
   const session = getSession();
   if (session && session.rollNo) {
-    window.location.href = "profile.html";
+    window.location.href = "/profile";
   }
 }
 
@@ -132,3 +132,4 @@ window.SIETAuth = {
   readStorage,
   writeStorage
 };
+

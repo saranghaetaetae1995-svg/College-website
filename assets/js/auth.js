@@ -59,7 +59,7 @@ function setupAuthForms() {
     }
     showMessage("Login successful. Redirecting to profile...", "success");
     setTimeout(() => {
-      window.location.href = "profile.html";
+      window.location.href = "/profile";
     }, 600);
   });
 
@@ -120,3 +120,4 @@ function initAuthPage() {
 }
 
 document.addEventListener("DOMContentLoaded", initAuthPage);
+
