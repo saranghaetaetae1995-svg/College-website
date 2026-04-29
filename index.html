@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIET | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <img src="assets/images/sl.png" alt="SIET logo" />
+        <div><strong>Sreyas Institute</strong><span>Engineering & Technology</span></div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a data-page="home" href="index.html">Home</a></li>
+        <li><a data-page="about" href="about.html">About</a></li>
+        <li><a data-page="dashboard" href="dashboard.html">Dashboard</a></li>
+        <li><a data-page="courses" href="courses.html">Courses</a></li>
+        <li><a data-page="placements" href="placements.html">Placements</a></li>
+        <li><a data-page="ranking" href="ranking.html">Ranking</a></li>
+        <li><a data-page="syllabus" href="syllabus.html">Syllabus</a></li>
+        <li class="auth-login"><a data-page="auth" href="auth.html">Login / Sign Up</a></li>
+        <li class="auth-profile" style="display:none;"><a data-page="profile" href="profile.html">Profile</a></li>
+        <li class="auth-logout" style="display:none;"><button id="logoutBtn" class="linklike">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container hero">
+    <section class="hero-panel">
+      <p class="badge">Autonomous • JNTUH Affiliated • Established 2011</p>
+      <h1>Professional SIET Student Portal</h1>
+      <p class="subtitle">Clean multi-page website with dashboard analytics, semester-wise syllabus navigation, 2026 placement highlights, and a student login/profile workflow.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="syllabus.html">Open Syllabus</a>
+        <a class="btn btn-secondary" href="placements.html">View 2026 Placements</a>
+      </div>
+      <div class="section">
+        <div class="grid three-col">
+          <article class="card ribbon"><h3>5-STAR</h3><p>IIT Bombay Spoken Tutorial Rating</p></article>
+          <article class="card ribbon"><h3>4 LPA</h3><p>Average package track</p></article>
+          <article class="card ribbon"><h3>17 LPA</h3><p>Best package record</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why SIET</h2>
+      <div class="grid three-col">
+        <article class="card">
+          <h3>Autonomous Academic Structure</h3>
+          <p>SIET follows an autonomous curriculum model with core subjects, electives, labs, and project-oriented learning for stronger technical depth.</p>
+        </article>
+        <article class="card">
+          <h3>Industry-Oriented Learning</h3>
+          <p>Students are trained through coding practice, communication programs, and placement readiness sessions aligned with current industry expectations.</p>
+        </article>
+        <article class="card">
+          <h3>Career Outcomes</h3>
+          <p>The institute is known for consistent placement support in Hyderabad with opportunities across service and product-based technology companies.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Quick College Highlights</h2>
+      <div class="stats-grid">
+        <article class="stat"><span>Institution Type</span><strong>Private Autonomous</strong></article>
+        <article class="stat"><span>Affiliation</span><strong>JNTUH</strong></article>
+        <article class="stat"><span>Established</span><strong>2011</strong></article>
+        <article class="stat"><span>Campus</span><strong>Nagole, Hyderabad</strong></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Student Services</h2>
+      <div class="grid two-col">
+        <article class="card">
+          <h3>Digital Syllabus Access</h3>
+          <p>Use the semester-wise syllabus page to quickly browse subjects, credits, and unit-wise details.</p>
+        </article>
+        <article class="card">
+          <h3>Student Account & Profile</h3>
+          <p>Create an account using roll number and email, then maintain academic and personal details in your profile page.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="assets/images/sl.png" alt="SIET logo" /><span>SIET Hyderabad</span></div>
+      <span id="userBadge">Guest Mode</span>
+      <span>© <span id="year"></span> SIET</span><span>Website by G Medha Rao</span>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

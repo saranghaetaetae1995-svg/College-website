@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIET | Syllabus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body data-page="syllabus">
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html"><img src="assets/images/sl.png" alt="SIET logo" /><div><strong>Sreyas Institute</strong><span>Engineering & Technology</span></div></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a data-page="home" href="index.html">Home</a></li><li><a data-page="about" href="about.html">About</a></li><li><a data-page="dashboard" href="dashboard.html">Dashboard</a></li><li><a data-page="courses" href="courses.html">Courses</a></li><li><a data-page="placements" href="placements.html">Placements</a></li><li><a data-page="ranking" href="ranking.html">Ranking</a></li><li><a data-page="syllabus" href="syllabus.html">Syllabus</a></li>
+        <li class="auth-login"><a data-page="auth" href="auth.html">Login / Sign Up</a></li><li class="auth-profile" style="display:none;"><a data-page="profile" href="profile.html">Profile</a></li><li class="auth-logout" style="display:none;"><button id="logoutBtn" class="linklike">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container section">
+    <div class="semester-header">
+      <div>
+        <h1>Syllabus Navigator</h1>
+        <p class="subtitle">Semester-wise subjects and unit-wise syllabus details.</p>
+      </div>
+      <a class="btn btn-primary" href="assets/data/sy.pdf" download>Download Syllabus</a>
+    </div>
+
+    <div class="semester-buttons" id="semesterButtons"></div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>S.No</th><th>Course Code</th><th>Subject</th><th>Credits</th><th>Action</th></tr>
+        </thead>
+        <tbody id="syllabusTableBody"><tr><td colspan="5" class="loading">Loading syllabus...</td></tr></tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <div class="syllabus-modal" id="syllabusModal" aria-hidden="true">
+    <div class="syllabus-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close syllabus view">×</button>
+      <h2 id="modalTitle">Subject Syllabus</h2>
+      <p id="modalMeta" class="subtitle"></p>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="page-footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/images/sl.png" alt="SIET logo" /><span>SIET Hyderabad</span></div><span id="userBadge">Guest Mode</span><span>© <span id="year"></span> SIET</span><span>Website by G Medha Rao</span></div></footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/syllabus-details.js"></script>
+  <script src="assets/js/syllabus.js"></script>
+</body>
+</html>
+
+
