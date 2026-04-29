@@ -25,8 +25,17 @@
     <h1>Student Profile</h1>
     <p class="profile-badge">Roll No: <span id="profileRoll"></span> | Email: <span id="profileEmail"></span></p>
 
-    <section class="card">
-      <form id="profileForm" class="form-grid">
+    <section class="card profile-workspace">
+      <div id="profileCardShell" class="profile-card-shell" style="display:none;">
+        <div class="id-card-actions">
+          <span class="id-chip">Student ID Card</span>
+          <button id="editProfileBtn" type="button" class="btn btn-secondary id-edit-btn">Edit Profile</button>
+        </div>
+        <article id="profileIdCard" class="profile-id-card"></article>
+      </div>
+
+      <div id="profileFormWrap">
+        <form id="profileForm" class="form-grid">
         <div class="grid two-col">
           <div><label for="fullName">Full Name</label><input id="fullName" type="text" /></div>
           <div><label for="branch">Branch</label><input id="branch" type="text" placeholder="CSE / ECE / ME / etc" /></div>
@@ -36,17 +45,29 @@
 
         <div><label for="about">About</label><textarea id="about" placeholder="Short profile summary"></textarea></div>
         <div><label for="skills">Skills</label><textarea id="skills" placeholder="Java, Python, Web Development, etc"></textarea></div>
+        <div class="profile-photo-field">
+          <label for="profilePhoto">Profile Photo (Local Upload)</label>
+          <input id="profilePhoto" type="file" accept="image/*" />
+          <img id="profilePhotoPreview" class="form-photo-preview" alt="Profile preview" style="display:none;" />
+        </div>
 
-        <button class="btn btn-primary" type="submit">Save Profile</button>
-      </form>
+          <button class="btn btn-primary" id="saveProfileBtn" type="submit">Save Profile</button>
+        </form>
+      </div>
       <p id="profileMessage" class="message"></p>
     </section>
   </main>
 
-  <footer class="page-footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/images/sl.png" alt="SIET logo" /><span>SIET Hyderabad</span></div><span id="userBadge">Guest Mode</span><span>© <span id="year"></span> SIET</span><span>Website by G Medha Rao</span></div></footer>
+  <div id="profilePopup" class="profile-popup" aria-live="polite">
+    <span id="profilePopupText"></span>
+    <button type="button" id="profilePopupClose" class="profile-popup-close" aria-label="Close popup">×</button>
+  </div>
+
+  <footer class="page-footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/images/sl.png" alt="SIET logo" /><span>SIET Hyderabad</span></div><span>© <span id="year"></span> SIET</span><span>Website by G Medha Rao</span></div></footer>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/profile.js"></script>
 </body>
 </html>
+
 
 

@@ -152,6 +152,10 @@ h1 {
   margin: 0.9rem 0 0.6rem;
 }
 
+.center-title {
+  text-align: center;
+}
+
 .subtitle { color: var(--muted); max-width: 68ch; }
 
 .btn {
@@ -431,13 +435,212 @@ textarea { min-height: 92px; resize: vertical; }
   font-weight: 700;
 }
 
-.avatar-preview {
-  width: 112px;
-  height: 112px;
-  border-radius: 0.8rem;
+.profile-workspace {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.profile-card-shell {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+}
+
+.id-card-actions {
+  width: min(420px, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.id-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #e3f2ff;
+  color: #0b537b;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border: 1px solid #bdd8ec;
+}
+
+.id-edit-btn {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.profile-id-card {
+  width: min(420px, 100%);
+  border-radius: 1rem;
+  border: 1px solid #c8dced;
+  box-shadow: 0 14px 36px rgba(13, 51, 79, 0.16);
+  background:
+    linear-gradient(135deg, #ffffff 0%, #edf7ff 56%, #f6fffb 100%);
+  padding: 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-id-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 44px rgba(10, 55, 87, 0.24);
+}
+
+.id-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px dashed #b9d5e8;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.id-header img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.id-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #0d4568;
+}
+
+.id-header p {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+}
+
+.id-student h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1.25rem;
+  color: #123c57;
+}
+
+.id-student-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.id-student-name-wrap {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.id-name-tag {
+  width: fit-content;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid #bdd6e8;
+  border-radius: 0.45rem;
+  color: #1f5474;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #f2faff;
+}
+
+.id-photo-box {
+  width: 84px;
+  height: 96px;
+  border: 1px solid #b9d5e8;
+  border-radius: 0.6rem;
+  background: #f6fbff;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.id-photo-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--line);
+}
+
+.id-photo-fallback {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 1px dashed #9fbfd5;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #25506b;
+  background: #eaf6ff;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem 0.8rem;
+  margin: 0.6rem 0;
+}
+
+.id-grid p,
+.id-section p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #24465f;
+}
+
+.id-section {
+  margin-top: 0.6rem;
+}
+
+.id-footer {
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #b9d5e8;
+  text-align: center;
+  font-size: 0.74rem;
+  color: #5d7182;
+}
+
+.profile-photo-field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.form-photo-preview {
+  width: 84px;
+  height: 96px;
+  border: 1px solid #b9d5e8;
+  border-radius: 0.6rem;
+  object-fit: cover;
+  background: #f6fbff;
+}
+
+.profile-popup {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 1400;
   display: none;
+  align-items: center;
+  gap: 0.6rem;
+  background: #0f5f88;
+  color: #fff;
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 14px 30px rgba(8, 49, 77, 0.28);
+  max-width: min(360px, 92vw);
+}
+
+.profile-popup.show {
+  display: inline-flex;
+}
+
+.profile-popup-close {
+  border: 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 0.35rem;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .message {
@@ -498,6 +701,14 @@ textarea { min-height: 92px; resize: vertical; }
   .three-col,
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .id-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .id-student-top {
+    align-items: center;
   }
 
   .menu-toggle { display: inline-block; }
